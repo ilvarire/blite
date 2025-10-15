@@ -46,7 +46,7 @@
     <div id="loading-area"
         class="loading-page-3 fixed top-0 left-0 w-full h-full z-[999999999] items-center justify-center bg-white"
         style="display: flex;">
-        <img src="assets/images/load.gif" class="animate-spin" width="90" alt="">
+        <img src="/assets/images/load.gif" width="90" alt="">
     </div>
 
     <!-- scrolltop-progress -->
@@ -67,8 +67,8 @@
                                 <div
                                     class="logo-header mx-auto mb-[10px] h-[65px] w-[160px] align-middle logo-header items-center relative flex">
 
-                                    <a href="index.html" class="mt-4"><br><br>
-                                        <img src="assets/images/logo.png" alt="/">
+                                    <a href="/" class="mt-4"><br><br>
+                                        <img src="/assets/images/logo.png" alt="/">
                                     </a>
                                 </div>
                                 <h3 class="coming-head md:text-[32px] mt-4 text-[25px] leading-[1.3] text-[#323232]">
