@@ -1,4 +1,4 @@
-<x-layouts.customer-layout :page="$equipment->name" :title="$equipment->name . '- Blite Authentic African Flavours & Premier Catering Solutions'">
+<x-layouts.customer-layout :page="$equipment->name" :title="$equipment->name . '- Blitefood | Online Food Ordering, Catering & Equipment Rentals'">
     <!-- Search Section -->
     <section class="lg:pt-[100px] sm:pt-[70px] pt-[50px] lg:pb-[100px] pb-[50px] relative bg-white overflow-hidden">
         @livewire('customer.equipment-info', ['equipment' => $equipment])

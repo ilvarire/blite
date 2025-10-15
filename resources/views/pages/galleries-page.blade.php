@@ -1,4 +1,4 @@
-<x-layouts.customer-layout :page="'Event Galleries'" :title="'Event Galleries - Blite Authentic African Flavours & Premier Catering Solutions'">
+<x-layouts.customer-layout :page="'Event Galleries'" :title="'Event Galleries - Blitefood | Online Food Ordering, Catering & Equipment Rentals'">
     <!-- Search Section -->
     <section class="content-inner-1 sm:pt-[100px] pt-[50px] lg:pb-[70px] sm:pb-10 pb-5">
         @livewire('customer.gallery-card')

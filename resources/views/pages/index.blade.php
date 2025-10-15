@@ -5,7 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ 'Blitefood - Home' ?? config('app.name') }}</title>
+    <title>{{ 'Blitefood | Online Food Ordering, Catering & Equipment Rentals' ?? config('app.name') }}</title>
+
+    <meta name="description"
+        content="Blitefood UK offers fast online food ordering, professional catering services, and reliable equipment rentals across the UK. Order now for fresh meals and seamless event support.">
+    <meta name="keywords"
+        content="online food ordering UK, catering services UK, event equipment rental UK, food delivery UK, Blitefood, party catering UK, hire catering equipment, buffet service UK">
+    <meta name="author" content="Blitefood UK">
+    <meta name="robots" content="">
+    <link rel="canonical" href="https://www.blitefood.co.uk/" />
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.blitefood.co.uk/">
+    <meta property="og:title" content="Order Food, Hire Catering Equipment & Catering Services | Blitefood UK">
+    <meta property="og:description"
+        content="Get food delivered, rent catering gear, or book full-service catering in the UK. Blitefood UK is your one-stop solution.">
+    <meta property="og:image" content="https://www.blitefood.co.uk/assets/images/og-image.jpg">
+
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.blitefood.co.uk/">
+    <meta name="twitter:title" content="Order Food, Hire Catering Equipment & Catering Services | Blitefood UK">
+    <meta name="twitter:description"
+        content="Order food online or hire equipment and catering services anywhere in the UK. Fast, fresh, and reliable with Blitefood.">
+    <meta name="twitter:image" content="https://www.blitefood.co.uk/assets/images/og-image.jpg">
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" href="{{ url('/favicon.svg') }}">

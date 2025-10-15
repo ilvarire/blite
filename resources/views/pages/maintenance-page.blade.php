@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ 'Maintenance' ?? config('app.name') }}</title>
+    <title>{{ 'Maintenance - Blitefood | Online Food Ordering, Catering & Equipment Rentals' ?? config('app.name') }}
+    </title>
 
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" href="{{ url('/favicon.svg') }}">
@@ -42,11 +43,11 @@
 <body id="bg" class="box-border m-0 selection:bg-primary selection:text-white font-poppins">
 
     <!-- Loader -->
-    {{-- <div id="loading-area"
+    <div id="loading-area"
         class="loading-page-3 fixed top-0 left-0 w-full h-full z-[999999999] items-center justify-center bg-white"
         style="display: flex;">
-        <img src="assets/images/logo.png" class="animate-spin" width="90" alt="">
-    </div> --}}
+        <img src="assets/images/load.gif" class="animate-spin" width="90" alt="">
+    </div>
 
     <!-- scrolltop-progress -->
     <div class="progress-wrap">
