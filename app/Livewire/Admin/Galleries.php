@@ -8,6 +8,7 @@ use Flux\Flux;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
@@ -54,7 +55,11 @@ class Galleries extends Component
     {
         $gallery = Gallery::findOrFail($this->galleryId);
         $validated = $this->validate([
-            'title' => 'required|max:150|unique:galleries,title' . $this->galleryId,
+            'title' => [
+                'required',
+                'max:150',
+                Rule::unique('galleries', 'title')->ignore($this->galleryId),
+            ],
             'description' => 'required|string|min:5',
             'facebook_link' => 'required|url',
             'instagram_link' => 'required|url',
@@ -63,6 +68,7 @@ class Galleries extends Component
             'images' => 'array|max:3',
             'images.*' => 'image|mimes:jpg,jpeg,png|max:2048'
         ]);
+
         $gallery->update([
             'title' => str($this->title)->trim(),
             'slug' => Str::slug($validated['title']),
