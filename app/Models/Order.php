@@ -16,6 +16,7 @@ class Order extends Model
         'note',
         'status',
         'payment_status',
+        'phone_number',
         'placed_at',
         'delivered_at',
         'coupon_id'

@@ -8,7 +8,7 @@ A new order has just been placed.
 **Order Reference:** {{ $order->reference }}
 **Customer Name:** {{ $order->user->name }}
 **Email:** {{ $order->user->email }}
-**Phone:** {{ $order->shippingAddress->phone_number }}
+**Phone:** {{ $order->phone_number ?? '-' }}
 
 @if ($order->order_type === 'delivery')
     **Shipping Address:**
@@ -36,10 +36,10 @@ A new order has just been placed.
 | ------------ | -------------------------------| -------- | --------------------- | --------------------- |
 @foreach($order->items as $item)
     @if ($item->product_type === 'food')
-        | {{ $item->food->name }} | {{ $item->size->label ?? '-' }} | {{ $item->quantity }} |
+        | {{ $item->product->name }} | {{ $item->size->label ?? '-' }} | {{ $item->quantity }} |
         {{ Number::currency($item->unit_price, 'GBP') }} | {{ Number::currency($item->total, 'GBP') }} |
     @elseif($item->product_type === 'equipment')
-        | {{ $item->equipment->name }} | Rental Start: {{ $item->rental_start }} ({{ $item->rental_duration }}hrs) |
+        | {{ $item->product->name }} | Rental Start: {{ $item->rental_start }} ({{ $item->rental_duration }}hrs) |
         {{ $item->quantity }} | {{ Number::currency($item->unit_price, 'GBP') }} | {{ Number::currency($item->total, 'GBP') }} |
     @endif
 @endforeach

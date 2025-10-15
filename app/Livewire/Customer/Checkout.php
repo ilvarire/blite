@@ -235,6 +235,7 @@ class Checkout extends Component
                 'shipping_address_id' => $AddressId,
                 'total_price' => $this->grand_total,
                 'note' => $this->note ?? null,
+                'phone_number' => $this->phone_number,
                 'coupon_id' => $this->coupon_id ?? null
             ]);
 
