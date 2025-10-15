@@ -23,6 +23,7 @@ class FoodCard extends Component
     public $sort = 'asc';
     public $selectedSize = null;
     public $foodPrices = [];
+    public $page = null;
 
     protected $queryString = [
         'search' => ['except' => ''],

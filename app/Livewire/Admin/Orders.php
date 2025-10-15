@@ -48,7 +48,7 @@ class Orders extends Component
                 new NewOrderNotification($order)
             );
 
-            Mail::to($order->user()->email)->send(
+            Mail::to($order->user->email)->send(
                 new OrderPlaced($order)
             );
 
@@ -75,7 +75,7 @@ class Orders extends Component
         $order->save();
         Flux::modal('edit-order')->close();
         $this->reset();
-        Mail::to($order->user()->email)->send(
+        Mail::to($order->user->email)->send(
             new OrderCancelled($order)
         );
         session()->flash('success', 'Order cancelled!');
@@ -112,7 +112,7 @@ class Orders extends Component
         Flux::modal('edit-order')->close();
         $this->reset();
 
-        Mail::to($order->user()->email)->send(
+        Mail::to($order->user->email)->send(
             new OrderDelivered($order->reference)
         );
         session()->flash('success', 'Order marked as Completed');
