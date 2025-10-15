@@ -469,6 +469,20 @@
 
     <div class="menu-backdrop"></div>
 
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68efe7d17690531950dd3405/1j7ki33gd';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
     <script src="{{ url('/assets/js/jquery.min.js') }}"></script> <!-- JQUERY.MIN JS -->
     <script src="{{ url('/assets/vendor/niceselect/js/jquery.nice-select.min.js') }}"></script> <!-- NICE SELECT -->
     <script src="{{ url('/assets/vendor/swiper/swiper-bundle.min.js') }}"></script> <!-- SWIPER -->
