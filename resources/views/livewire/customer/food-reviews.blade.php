@@ -13,7 +13,7 @@
                 <li class="nav-item mr-[3px] mb-[-1px] rounded-ss-md rounded-se-md overflow-hidden">
                     <button class="nav-link border-2 border-transparent px-4 py-2 block developement-1"
                         href="#developement-1">
-                        <i class="icon-settings"></i>
+                        <i class="icon-comment"></i>
                         <span class="hidden md:inline-block ml-[10px]">Product Review</span>
                     </button>
                 </li>
