@@ -1,4 +1,5 @@
 @component('mail::message')
+<img src="{{ asset('blite.png') }}" alt="Company Logo" style="max-width: 150px; margin-bottom: 20px;">
 # New Order Pending Payment
 
 Hello Admin,

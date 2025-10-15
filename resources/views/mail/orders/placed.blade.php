@@ -1,4 +1,5 @@
 @component('mail::message')
+<img src="{{ asset('blite.png') }}" alt="Company Logo" style="max-width: 150px; margin-bottom: 20px;">
 # Order Placed Successfully!
 
 Thank you for your payment of {{ Number::currency($order->total_price, 'GBP') }}.
