@@ -1,4 +1,5 @@
 @component('mail::message')
+<img src="{{ asset('blite.png') }}" alt="Blitefood" style="max-width: 150px; margin-bottom: 20px;"><br><br>
 # Order Cancelled
 
 We regret to inform you that your order has been cancelled due to unforeseen circumstances.
