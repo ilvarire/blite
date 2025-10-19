@@ -9,6 +9,7 @@ class Banking extends Model
     protected $fillable = [
         'bank_name',
         'account_name',
-        'account_number'
+        'account_number',
+        'sort_code'
     ];
 }

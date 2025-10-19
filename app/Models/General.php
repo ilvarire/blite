@@ -10,6 +10,8 @@ class General extends Model
         'checkout',
         'maintenance',
         'location',
+        'pickup_location',
+        'pickup_time',
         'email',
         'policy',
         'guide',

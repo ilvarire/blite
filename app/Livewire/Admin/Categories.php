@@ -26,6 +26,7 @@ class Categories extends Component
 
     #[Validate('required|alpha|max:100|unique:categories,name')]
     public $editName = null;
+    public $editIsFeatured = null;
     public $oldImage = null;
     public $editImage = null;
     public $categoryId = null;
@@ -72,6 +73,7 @@ class Categories extends Component
         $category = Category::where('slug', $category)->first();
         if ($category) {
             $this->editName = $category->name;
+            $this->editIsFeatured = $category->is_featured;
             $this->oldImage = $category->image_url;
             $this->categoryId = $category->id;
         } else {
@@ -88,12 +90,14 @@ class Categories extends Component
                 'max:100',
                 Rule::unique('categories', 'name')->ignore($category->id)
             ],
-            'editImage' => 'nullable|image|max:2048'
+            'editImage' => 'nullable|image|max:2048',
+            'editIsFeatured' => 'boolean'
         ]);
 
         $category->update([
             'name' => str(trim($validated['editName']))->title(),
-            'slug' => Str::slug($validated['editName'])
+            'slug' => Str::slug($validated['editName']),
+            'is_featured' => $this->editIsFeatured
         ]);
 
         if ($this->editImage) {

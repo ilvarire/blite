@@ -11,7 +11,8 @@
                         <div
                             class="w-[150px] min-w-[150px] h-[150px] mt-0 mx-auto mb-[10px] rounded-full border-[9px] border-white duration-500 z-[1]">
                             <img src="{{ asset('storage/' . $category->image_url) }}" alt=""
-                                class="rounded-full relative group-hover:animate-spin">
+                                class="animate-spin rounded-full relative group-hover:animate-spin"
+                                style="animation: spin 10s linear infinite !important;">
                         </div>
                         <div class="mt-auto">
                             <h4 class="mb-2.5">
@@ -19,7 +20,6 @@
                                     {{ $category->name}}
                                 </a>
                             </h4>
-                            {{-- <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipiscing.</p> --}}
 
                             <a href="{{ route('food', ['categories' => $category->slug])}}"
                                 class="btn btn-primary btn-hover-2 mt-[18px]">See Menu</a>
@@ -31,8 +31,4 @@
 
         </div>
     </div>
-    <img src="assets/images/background/pic2.png" alt=""
-        class="bg1 bottom-0 left-[-275px] absolute max-2xl:hidden animate-move">
-    <img src="assets/images/background/pic3.png" alt=""
-        class="bg2 right-[40px] max-2xl:right-0 top-[100px] max-2xl:top-[28px] absolute 2xl:block hidden">
 </section>

@@ -185,6 +185,24 @@
 
                     <label class="block text-sm mb-2">
                         <span class="text-gray-700 dark:text-gray-400">
+                            Featured: <span class="text-purple-600">{{ $editIsFeatured ? 'Yes' : 'No' }} </span>
+                        </span>
+                        <input type="checkbox" wire:model="editIsFeatured" value="1"
+                            class="text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" />
+                        <span class="ml-2">
+
+                        </span>
+                        @error('editIsFeatured')
+                            <span class="text-xs text-red-600 dark:text-red-400">
+                                {{$message}}
+                            </span>
+                        @enderror
+
+                    </label>
+
+
+                    <label class="block text-sm mb-2">
+                        <span class="text-gray-700 dark:text-gray-400">
                             Image
                         </span>
                         <input type="file" accept="image/*" wire:model="editImage" value="{{ old('image_url') }}"

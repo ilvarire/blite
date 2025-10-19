@@ -25,6 +25,8 @@ class Checkout extends Component
     public $state_id;
     public $address;
     public $city;
+    public $pickup_location;
+    public $pickup_time;
     public $zip_code;
     public $phone_number;
     public $note;
@@ -42,6 +44,8 @@ class Checkout extends Component
         if (!$general->checkout) {
             return redirect(route('cart'));
         }
+        $this->pickup_location = $general->pickup_location;
+        $this->pickup_time = $general->pickup_time;
         $this->loadCartItems();
     }
     private function loadCartItems()

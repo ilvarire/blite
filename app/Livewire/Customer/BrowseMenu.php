@@ -27,7 +27,10 @@ class BrowseMenu extends Component
     public function render()
     {
         $foods = Food::with('prices')
-            ->where('is_special', true)->take(6)
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'combo');
+            })
+            ->take(6)
             ->get();
         return view('livewire.customer.browse-menu', [
             'foods' => $foods

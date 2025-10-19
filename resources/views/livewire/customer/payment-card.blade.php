@@ -23,6 +23,9 @@
                             <!-- Account Name -->
                             <flux:input wire:model="accountName" value="{{$accountName}}" :label="__('Account Name')"
                                 type="text" required autocomplete="text" placeholder="Account Name" disabled />
+                            <!-- Sort Code -->
+                            <flux:input wire:model="sortCode" value="{{$sortCode}}" :label="__('Sort Code')" type="text"
+                                required autocomplete="text" placeholder="Sort Code" disabled />
 
                             <div wire:ignore x-data="{ copyText: '{{ $reference }}', 
                                 copy() {

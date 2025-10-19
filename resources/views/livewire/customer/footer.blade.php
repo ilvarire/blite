@@ -28,7 +28,7 @@
                                 <i
                                     class="flaticon-email-1 absolute text-3xl leading-[30px] left-0 top-[5px] text-primary w-[30px] h-[30px]"></i>
                                 <p class="text-[#CCCCCC] tracking-wide leading-6">
-                                    support@blitefood.co.uk
+                                    {{ $data->email }}
                                 </p>
                             </li>
                         </ul>

@@ -70,7 +70,7 @@
     <div id="loading-area"
         class="loading-page-3 fixed top-0 left-0 w-full h-full z-[999999999] items-center justify-center bg-white"
         style="display: flex;">
-        <img src="assets/images/load.gif" width="90" alt="">
+        <img src="favicon.svg" width="50" alt="" style="animation: spin 2s linear infinite !important;">
     </div>
 
     <!-- scrolltop-progress -->
@@ -257,14 +257,16 @@
                                     <div class="md:w-5/12 px-[15px]">
                                         <div class="banner-media">
                                             <img src="assets/images/main-slider/slider1/rice.png" alt="/"
-                                                class="xl:w-full lg:w-[450px] md:w-[100%] sm:w-[250px] w-[250px]">
+                                                class="xl:w-full lg:w-[450px] md:w-[100%] sm:w-[250px] w-[250px]"
+                                                style="animation: spin 20s linear infinite !important;">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <img src="assets/images/main-slider/slider1/img3.png" class="img1" alt="/">
+                            {{-- <img src="assets/images/main-slider/slider1/img3.png" class="img1" alt="/">
                             <img src="assets/images/main-slider/slider1/img1.png" class="img2" alt="/">
                             <img src="assets/images/main-slider/slider1/img2.png" class="img3 animate-motion" alt="/">
+                            --}}
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -355,18 +357,19 @@
             </div>
         </div>
         <!-- Banner -->
+        <br>
 
-        <!-- Special Categories -->
-        @livewire('customer.special')
-        <!-- Special Menu End -->
-
-        <!-- Browser Our Menu -->
+        <!-- combo pack -->
         @livewire('customer.browse-menu')
-        <!-- Browser Our Menu -->
+        <!-- Combo pack End -->
 
-        <!-- Menu Start -->
+        <!-- our Categories -->
+        @livewire('customer.special')
+        <!-- our Categories End -->
+
+        <!-- our Menu Start -->
         @livewire('customer.menu')
-        <!-- Menu ends -->
+        <!-- our Menu ends -->
 
         <!--  Service Start -->
         <section
@@ -469,7 +472,7 @@
 
     <div class="menu-backdrop"></div>
 
-    <!--Start of Tawk.to Script-->
+    {{-- <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
@@ -481,7 +484,7 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script--> --}}
 
     <script src="{{ url('/assets/js/jquery.min.js') }}"></script> <!-- JQUERY.MIN JS -->
     <script src="{{ url('/assets/vendor/niceselect/js/jquery.nice-select.min.js') }}"></script> <!-- NICE SELECT -->

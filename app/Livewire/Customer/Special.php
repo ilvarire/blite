@@ -9,7 +9,8 @@ class Special extends Component
 {
     public function render()
     {
-        $categories = Category::select('name', 'id', 'image_url', 'slug')->take(4)->get();
+        $categories = Category::select('name', 'id', 'image_url', 'slug')
+            ->where('is_featured', true)->take(4)->get();
         return view('livewire.customer.special', [
             'categories' => $categories
         ]);

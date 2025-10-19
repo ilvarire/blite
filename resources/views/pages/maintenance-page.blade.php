@@ -46,7 +46,7 @@
     <div id="loading-area"
         class="loading-page-3 fixed top-0 left-0 w-full h-full z-[999999999] items-center justify-center bg-white"
         style="display: flex;">
-        <img src="/assets/images/load.gif" width="90" alt="">
+        <img src="favicon.svg" width="50" alt="" style="animation: spin 2s linear infinite !important;">
     </div>
 
     <!-- scrolltop-progress -->

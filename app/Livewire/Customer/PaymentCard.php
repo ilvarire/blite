@@ -15,6 +15,7 @@ class PaymentCard extends Component
     public $bankName;
     public $amount;
     public $accountName;
+    public $sortCode;
     public $reference;
     public $accountNumber;
 
@@ -28,6 +29,7 @@ class PaymentCard extends Component
     {
         $data = Banking::take(1)->first();
         $this->bankName = $data->bank_name;
+        $this->sortCode = $data->sort_code;
         $this->accountName = $data->account_name;
         $this->accountNumber = $data->account_number;
     }

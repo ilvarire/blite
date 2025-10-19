@@ -25,9 +25,12 @@
                     @if($orderType === 'pickup')
                         <!-- Pickup Location -->
                         <p class="text-base mb-4">
-                            Pickup Location: <strong class="mb-2">Location to be Communicated via Call 📞 or Email
-                                📩.</strong><br>
-                            Date & Time: <strong class="mb-2">To be Communicated</strong>
+                            Pickup Location: <strong class="mb-2">
+                                {{ $pickup_location }}.
+                            </strong><br>
+                            Time: <strong class="mb-2">
+                                {{ $pickup_time }}
+                            </strong>
                         </p>
                     @elseif($orderType === 'delivery')
                         <div class="form-group mt-5 mb-5 inline-block w-full">

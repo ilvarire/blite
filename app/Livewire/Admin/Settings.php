@@ -14,11 +14,18 @@ use Livewire\Component;
 class Settings extends Component
 {
     public $bank_name = null;
+    public  $sort_code = null;
     public $account_name = null;
     public $account_number = null;
     public $policy = null;
     public $about = null;
     public $guide = null;
+
+    public $email = null;
+    public $location = null;
+    public $phone = null;
+    public $pickup_location = null;
+    public $pickup_time = null;
     public $facebook_link = null;
     public $instagram_link = null;
     public $tiktok_link = null;
@@ -27,6 +34,7 @@ class Settings extends Component
         'bank_name' => 'required|string|max:255',
         'account_name' => 'required|string|max:255',
         'account_number' => 'required|numeric',
+        'sort_code' => 'required|string|max:15',
     ];
 
     public function mount()
@@ -40,6 +48,13 @@ class Settings extends Component
         $this->policy = $general->policy;
         $this->about = $general->about;
         $this->guide = $general->guide;
+
+        $this->email = $general->email;
+        $this->phone = $general->phone;
+        $this->location = $general->location;
+        $this->pickup_location = $general->pickup_location;
+        $this->pickup_time = $general->pickup_time;
+
         $this->facebook_link = $general->facebook_link;
         $this->instagram_link = $general->instagram_link;
         $this->tiktok_link = $general->tiktok_link;
@@ -48,6 +63,7 @@ class Settings extends Component
     {
         $banking = Banking::take(1)->first();
         $this->bank_name = $banking->bank_name;
+        $this->sort_code = $banking->sort_code;
         $this->account_name = $banking->account_name;
         $this->account_number = $banking->account_number;
     }
@@ -93,6 +109,11 @@ class Settings extends Component
             'policy' => 'required|string',
             'about' => 'required|string',
             'guide' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'pickup_location' => 'required|string|max:255',
+            'pickup_time' => 'required|string|max:25',
             'facebook_link' => 'required|url',
             'instagram_link' => 'required|url',
             'tiktok_link' => 'required|url',

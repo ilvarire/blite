@@ -77,7 +77,7 @@
     <div id="loading-area"
         class="loading-page-3 fixed top-0 left-0 w-full h-full z-[999999999] items-center justify-center bg-white "
         style="display: flex;">
-        <img src="/assets/images/load.gif" width="90" alt="">
+        <img src="favicon.svg" width="50" alt="" style="animation: spin 2s linear infinite !important;">
     </div>
 
     <!-- scrolltop-progress -->
@@ -244,7 +244,7 @@
     </div>
     <div class="menu-backdrop"></div>
 
-    <!--Start of Tawk.to Script-->
+    {{-- <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
@@ -256,7 +256,7 @@
             s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script--> --}}
 
     <script src="{{ url('/assets/js/jquery.min.js')}}"></script> <!-- JQUERY.MIN JS -->
     <script src="{{ url('/assets/vendor/niceselect/js/jquery.nice-select.min.js')}}"></script> <!-- nice-select -->
