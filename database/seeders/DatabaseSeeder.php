@@ -30,10 +30,13 @@ class DatabaseSeeder extends Seeder
                 'maintenance' => false,
                 'location' => '62 FeatherDell, Hatfield, Hertfordshire UK',
                 'email' => 'support@blitefood.co.uk',
-                'phone' => '+134 3473 38940',
+                'phone' => '+134347338940',
                 'facebook_link' => 'https://facebook.com',
                 'instagram_link' => 'https://instagram.com',
                 'tiktok_link' => 'https://tiktok.com',
+                'whatsapp_link' => 'https://whatsapp.com',
+                'pickup_location' => 'To be Communicated',
+                'pickup_time' => 'To be Communicated',
                 'policy' => 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.',
                 'about' => 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.',
                 'guide' => 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.',
@@ -43,6 +46,7 @@ class DatabaseSeeder extends Seeder
         DB::table('bankings')->insert([
             [
                 'bank_name' => 'STAR BANK PLC',
+                'sort_code' => '233495',
                 'account_name' => 'BLITEFOOD LMT',
                 'account_number' => '033948893882'
             ],

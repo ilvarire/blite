@@ -204,7 +204,6 @@
                         @endauth
                         </ul>
 
-                        @livewire('customer.social-links')
                     </div>
                 </div>
             </div>

@@ -18,6 +18,7 @@ class General extends Model
         'about',
         'facebook_link',
         'instagram_link',
+        'whatsapp_link',
         'tiktok_link',
         'phone'
     ];

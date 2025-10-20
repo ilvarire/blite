@@ -27,6 +27,7 @@ class Settings extends Component
     public $pickup_location = null;
     public $pickup_time = null;
     public $facebook_link = null;
+    public $whatsapp_link = null;
     public $instagram_link = null;
     public $tiktok_link = null;
 
@@ -57,6 +58,7 @@ class Settings extends Component
 
         $this->facebook_link = $general->facebook_link;
         $this->instagram_link = $general->instagram_link;
+        $this->whatsapp_link = $general->whatsapp_link;
         $this->tiktok_link = $general->tiktok_link;
     }
     private function loadBanking()
@@ -116,6 +118,7 @@ class Settings extends Component
             'pickup_time' => 'required|string|max:25',
             'facebook_link' => 'required|url',
             'instagram_link' => 'required|url',
+            'whatsapp_link' => 'required|url',
             'tiktok_link' => 'required|url',
         ]);
         $general = General::take(1)->first();

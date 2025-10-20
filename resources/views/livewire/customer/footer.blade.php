@@ -33,6 +33,18 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="dz-social-icon">
+                        <ul class="flex flex-row mb-2">
+                            <li><a target="_blank" class="fab fa-facebook-f mr-2" href="{{ $data->facebook_link }}"></a>
+                            </li>
+                            <li><a target="_blank" class="fab fa-tiktok mr-2" href="{{ $data->tiktok_link }}"></a>
+                            </li>
+                            <li><a target="_blank" class="fab fa-whatsapp mr-2" href="{{ $data->whatsapp_link }}"></a>
+                            </li>
+                            <li><a target="_blank" class="fab fa-instagram mr-2" href="{{ $data->instagram_link }}"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="xl:w-3/12 lg:w-2/12 sm:w-6/12 w-full px-[15px]">
                     <div class="widget widget_services mb-[30px]">
@@ -67,7 +79,7 @@
                             Help Center</h5>
                         <ul>
                             <li><a href="{{ route('policy')}}"><span>Policy</span></a></li>
-                            <li><a href="{{ route('guide')}}"><span>Guide</span></a></li>
+                            <li><a href="{{ route('guide')}}"><span>Terms & Conditions</span></a></li>
                             <li><a href="#footer"><span>Contact Us</span></a></li>
                         </ul>
                     </div>

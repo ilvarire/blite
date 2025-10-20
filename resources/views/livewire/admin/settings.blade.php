@@ -83,7 +83,7 @@
 
         <label class="block text-sm mb-2">
             <span class="text-gray-700 dark:text-gray-400">
-                Guide
+                Terms & Conditions
             </span>
             <textarea wire:model="guide" value="{{ old('guide') }}"
                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
@@ -175,6 +175,21 @@
                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"
                 placeholder="https://facebook.com/url" required />
             @error('facebook_link')
+                <span class="text-xs text-red-600 dark:text-red-400">
+                    {{$message}}
+                </span>
+            @enderror
+
+        </label>
+
+        <label class="block text-sm mb-2">
+            <span class="text-gray-700 dark:text-gray-400">
+                Whatsapp Link
+            </span>
+            <input type="url" wire:model="whatsapp_link" value="{{ old('whatsapp_link') }}"
+                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"
+                placeholder="https://whatsapp.com/url" required />
+            @error('whatsapp_link')
                 <span class="text-xs text-red-600 dark:text-red-400">
                     {{$message}}
                 </span>

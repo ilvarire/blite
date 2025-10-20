@@ -1,4 +1,4 @@
-<x-layouts.customer-layout :page="'Guide'" :title="'Guide - Blitefood | Online Food Ordering, Catering & Equipment Rentals'">
+<x-layouts.customer-layout :page="'Terms & Conditions'" :title="'Terms - Blitefood | Online Food Ordering, Catering & Equipment Rentals'">
     <!-- Search Section -->
     <section class="content-inner-1 sm:pt-[100px] pt-[50px] lg:pb-[70px] sm:pb-10 pb-5">
         @livewire('customer.guide-card')

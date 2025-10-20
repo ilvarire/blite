@@ -2,7 +2,7 @@
     <div class="container">
         <div
             class="section-head font-lobster mb-[50px] max-xl:mb-[30px] mx-auto relative flex items-center justify-between">
-            <h2 class="title mb-0 text-black2">Combo Packs</h2>
+            <h2 class="title mb-0 text-black2">Our Quick Meals</h2>
             <div class="pagination-align flex">
                 <div class="menu-button-prev1 btn-prev btn-hover-2"><i
                         class="fa-solid fa-arrow-left sm:text-xl text-[15px]"></i></div>
@@ -30,7 +30,6 @@
                                 </div>
                             </div>
                             <div class="menu-footer max-w-[110px] mt-auto">
-                                {{-- <span class="text-bodycolor text-[13px]">Smallest Size</span> --}}
                                 <span
                                     class="price duration-500">{{ Number::currency($food->prices->first()->price, 'GBP') }}</span>
                             </div>
