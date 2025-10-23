@@ -77,7 +77,7 @@
                                     href="javascript:void(0);"><span><i class="flaticon-fast-food"></i></span>All</a>
                             </li>
                             @forelse($categoriesList as $category)
-                                <li data-filter=".{{$category->name}}" class="btn md:mb-0 mb-5">
+                                <li data-filter=".{{$category->slug}}" class="btn md:mb-0 mb-5">
                                     <a href="javascript:void(0);">
                                         <span><i class="flaticon-salad"></i></span>
                                         {{$category->name}}
@@ -91,7 +91,7 @@
             </div>
             <ul id="masonry" class="row dlab-gallery-listing gallery">
                 @forelse($foods as $food)
-                    <li class="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-[30px] All {{$food->category->name}}"
+                    <li class="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-[30px] All {{$food->category->slug}}"
                         wire:key="{{$food->id}}">
                         <div
                             class="dz-img-box7 rounded-[10px] bg-white text-center relative h-full duration-200 overflow-hidden z-[1] shadow-[0px_15px_55px_rgba(34,34,34,0.15)]">
