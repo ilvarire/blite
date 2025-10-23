@@ -69,10 +69,30 @@
             </aside>
         </div>
         <div class="lg:w-3/4 w-full px-[15px] lg:order-2 order-1">
-
-            <ul class="row">
+            <div class="row">
+                <div class="w-full px-[15px] text-center">
+                    <div class="site-filters style-2 clearfix lg:mb-12 md:mb-6 mb-5">
+                        <ul class="filters" data-bs-toggle="buttons">
+                            <li data-filter=".All" class="btn md:mb-0 mb-5 active"><a
+                                    href="javascript:void(0);"><span><i class="flaticon-fast-food"></i></span>All</a>
+                            </li>
+                            @forelse($categoriesList as $category)
+                                <li data-filter=".{{$category->name}}" class="btn md:mb-0 mb-5">
+                                    <a href="javascript:void(0);">
+                                        <span><i class="flaticon-salad"></i></span>
+                                        {{$category->name}}
+                                    </a>
+                                </li>
+                            @empty
+                            @endforelse
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul id="masonry" class="row dlab-gallery-listing gallery">
                 @forelse($foods as $food)
-                    <li class="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-[30px]" wire:key="{{$food->id}}">
+                    <li class="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-[30px] All {{$food->category->name}}"
+                        wire:key="{{$food->id}}">
                         <div
                             class="dz-img-box7 rounded-[10px] bg-white text-center relative h-full duration-200 overflow-hidden z-[1] shadow-[0px_15px_55px_rgba(34,34,34,0.15)]">
                             <div class="dz-media relative overflow-hidden">

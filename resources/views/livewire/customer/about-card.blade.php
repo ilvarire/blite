@@ -4,7 +4,7 @@
             About Us
         </h2>
         <p class="max-w-[815px] m-auto lg:text-base text-sm lg:leading-[1.6rem]">
-            {{ $about }}
+            {!! $about !!}
         </p>
     </div>
 

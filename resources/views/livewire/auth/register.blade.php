@@ -13,6 +13,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     public string $email = '';
     public string $password = '';
     public string $password_confirmation = '';
+    public bool $terms = false;
 
     /**
      * Handle an incoming registration request.
@@ -21,8 +22,11 @@ new #[Layout('components.layouts.auth')] class extends Component {
     {
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
+            'terms' => ['accepted'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'terms.accepted' => 'You must accept the terms and conditions before continuing.',
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
@@ -57,6 +61,13 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Confirm Password -->
         <flux:input wire:model="password_confirmation" :label="__('Confirm password')" type="password" required
             autocomplete="new-password" :placeholder="__('Confirm password')" viewable />
+
+        <!-- Remember Me -->
+        <div class="flex flex-row gap-2">
+            <flux:checkbox wire:model="terms" :label="__('Accept')" required />
+            <flux:link href="{{ route('guide') }}" target="_blank" class="text-sm">Terms & conditions</flux:link>
+        </div>
+
 
         <div class="flex items-center justify-end">
             <flux:button type="submit" variant="danger" class="w-full">

@@ -4,7 +4,7 @@
             Our Terms & Conditions
         </h2>
         <p class="max-w-[815px] m-auto lg:text-base text-sm lg:leading-[1.6rem]">
-            {{ $guide }}
+            {!! $guide !!}
         </p>
     </div>
 

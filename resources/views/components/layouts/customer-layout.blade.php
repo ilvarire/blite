@@ -262,6 +262,8 @@
     <script src="{{ url('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
     <script src="{{ url('/assets/vendor/nouislider/nouislider.min.js')}}"></script><!-- NOUSLIDER MIN JS-->
 
+    <script src="assets/vendor/masonry/masonry-4.2.2.js"></script><!-- MASONRY -->
+    <script src="assets/vendor/masonry/isotope.pkgd.min.js"></script><!-- ISOTOPE -->
     <!-- PICKDATE -->
     <script src="{{ url('/assets/vendor/pickadate/lib/picker.js') }}"></script>
     <script src="{{ url('/assets/vendor/pickadate/lib/picker.date.js') }}"></script>
