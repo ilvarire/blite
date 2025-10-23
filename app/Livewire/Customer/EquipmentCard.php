@@ -105,7 +105,7 @@ class EquipmentCard extends Component
                         ->orWhere('description', 'like', $term);
                 });
             })
-            ->simplePaginate(12);
+            ->simplePaginate(24);
         return view('livewire.customer.equipment-card', [
             'equipments' => $equipments
         ]);

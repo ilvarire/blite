@@ -146,7 +146,7 @@ class FoodCard extends Component
                 'food.updated_at'
             )
             ->orderBy('min_price', $this->sort)
-            ->simplePaginate(12);
+            ->simplePaginate(24);
 
         $allCategories = Category::orderBy('name')->get();
         return view('livewire.customer.food-card', [
