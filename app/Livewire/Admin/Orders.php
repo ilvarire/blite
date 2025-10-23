@@ -124,7 +124,7 @@ class Orders extends Component
         $this->orderId = $id;
     }
 
-    public function deleteOrder($order)
+    public function deleteOrder()
     {
         if ($this->orderId) {
             $order = Order::findOrFail($this->orderId);
