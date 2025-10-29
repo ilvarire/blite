@@ -18,7 +18,7 @@
                     <div class="swiper-slide" wire:ignore.self wire:key="food-{{ $food->id }}">
                         <div
                             class="dz-img-box3 box-hover group style-4 bg-white p-[18px] flex flex-col h-[160px] relative z-[1] overflow-hidden rounded-[10px]">
-                            <div class="menu-detail flex items-center mb-3">
+                            <div class="menu-detail flex items-center">
                                 <div class="dz-media mr-5 w-[60px] min-w-[60px] h-[60px]">
                                     <img class="rounded-xl" src="{{ asset('storage/' . $food->image_url) }}" alt="/">
                                 </div>
@@ -26,6 +26,7 @@
                                     <h6 class="title mb-[3px] duration-500"><a
                                             href="{{ route('food.details', $food->slug)}}">{{ $food->name}}</a>
                                     </h6>
+                                    <p>{{ mb_strimwidth($food->description, 0, 30, '..') }}</p>
                                 </div>
                             </div>
                             <div class="menu-footer max-w-[110px] mt-auto">
