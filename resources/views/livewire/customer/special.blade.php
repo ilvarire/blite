@@ -1,7 +1,7 @@
 <section class="lg:pt-[100px] pt-[50px] lg:pb-[70px] pb-[40px] bg-white relative overflow-hidden section-wrapper-2">
     <div class="container">
         <div class="2xl:mb-[50px] mb-[25px] relative mx-auto text-center">
-            <h2 class="font-lobster">Our Categories</h2>
+            <h2 class="font-lobster">Featured Categories</h2>
         </div>
         <div class="row">
             @forelse($categories as $category)

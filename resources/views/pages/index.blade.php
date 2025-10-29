@@ -222,22 +222,24 @@
                                     <div class="md:w-7/12 px-[15px]">
                                         <div class="banner-content md:mb-[60px] mb-0">
                                             <span
-                                                class="font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">
+                                                class="font-lobster font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">
                                                 Authentic African Flavors
                                             </span>
                                             <h1 class="font-lobster mb-2.5 text-black2">Home of<br>Yummy <span
                                                     class="text-primary">Delight</span></h1>
                                             <p class="max-w-[500px] lg:text-lg sm:text-base text-sm leading-[27px]">
-                                                Enjoy mouth-watering African dishes prepared with love and heritage,
-                                                delivered right to your door.
+                                                Enjoy mouth-watering African dishes,<br>
+                                                delivered right to your door. Next day delivery (exceptions to quick
+                                                meals)
+                                                Order hours: 7am to 7pm.
                                             </p>
                                             <div class="banner-btn flex items-center lg:mt-10 mt-[25px] gap-[30px]">
                                                 <a href="{{ route('food') }}"
-                                                    class="btn btn-primary btn-md btn-hover-1"><span>
+                                                    class="font-lobster btn btn-primary btn-md btn-hover-1"><span>
                                                         View our Menu
                                                     </span></a>
                                                 <a href="{{ route('cart') }}}"
-                                                    class="btn btn-outline text-primary btn-md btn-hover-1"><span>
+                                                    class="font-lobster btn btn-outline text-primary btn-md btn-hover-1"><span>
                                                         View Cart
                                                     </span></a>
                                             </div>
@@ -262,7 +264,7 @@
                                     <div class="md:w-7/12 px-[15px]">
                                         <div class="banner-content md:mb-[60px] mb-0">
                                             <span
-                                                class="font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">The
+                                                class="font-lobster font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">The
                                                 Catering Equipment Rentals</span>
                                             <h1 class="font-lobster mb-2.5 text-black2">Perfect for your<br> Next <span
                                                     class="text-primary">Event</span></h1>
@@ -271,10 +273,10 @@
                                                 successful.</p>
                                             <div class="banner-btn flex items-center lg:mt-10 mt-[25px] gap-[30px]">
                                                 <a href="{{ route('equipments') }}"
-                                                    class="btn btn-primary btn-md btn-hover-1"><span>View
+                                                    class="font-lobster btn btn-primary btn-md btn-hover-1"><span>View
                                                         Equipments</span></a>
                                                 <a href="{{ route('register') }}"
-                                                    class="btn btn-outline text-primary btn-md shadow-primary btn-hover-1"><span>
+                                                    class="font-lobster btn btn-outline text-primary btn-md shadow-primary btn-hover-1"><span>
                                                         Rent</span></a>
                                             </div>
                                         </div>
@@ -299,7 +301,7 @@
                                     <div class="md:w-7/12 px-[15px]">
                                         <div class="banner-content md:mb-[60px] mb-0">
                                             <span
-                                                class="font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">
+                                                class="font-lobster font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">
                                                 Fast & Reliable Delivery
                                             </span>
                                             <h1 class="font-lobster mb-2.5 text-black2">Fresh & Delicious Food <br>
@@ -309,10 +311,10 @@
                                                 food needs.</p>
                                             <div class="banner-btn flex items-center lg:mt-10 mt-[25px] gap-[30px]">
                                                 <a href="#book"
-                                                    class="btn btn-primary btn-md btn-hover-1 shadow-primary"><span>Book
+                                                    class="font-lobster btn btn-primary btn-md btn-hover-1 shadow-primary"><span>Book
                                                         our Service</span></a>
                                                 <a href="{{ route('galleries') }}"
-                                                    class="btn btn-outline text-primary btn-md shadow-primary btn-hover-1"><span>View
+                                                    class="font-lobster btn btn-outline text-primary btn-md shadow-primary btn-hover-1"><span>View
                                                         Events</span></a>
                                             </div>
                                         </div>
@@ -459,6 +461,7 @@
     <div class="menu-backdrop"></div>
 
     <!--Start of Tawk.to Script-->
+    {{--
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
@@ -469,17 +472,14 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-    </script>
+    </script> --}}
     <!--End of Tawk.to Script-->
 
     <script src="{{ url('/assets/js/jquery.min.js') }}"></script> <!-- JQUERY.MIN JS -->
     <script src="{{ url('/assets/vendor/niceselect/js/jquery.nice-select.min.js') }}"></script> <!-- NICE SELECT -->
     <script src="{{ url('/assets/vendor/swiper/swiper-bundle.min.js') }}"></script> <!-- SWIPER -->
-    <!-- PICKDATE -->
-    {{--
-    <script src="{{ url('/assets/vendor/pickadate/lib/picker.js') }}"></script>
-    <script src="{{ url('/assets/vendor/pickadate/lib/picker.date.js') }}"></script>
-    <script src="{{ url('/assets/vendor/pickadate/lib/picker.time.js') }}"></script> --}}
+
+
     <script src="{{ url('/assets/js/dz.carousel.js') }}"></script><!-- OWL CAROUSEL -->
     <script src="{{ url('/assets/js/custom.min.js') }}"></script> <!-- CUSTOM.MIN.JS -->
     <script src="{{ url('/assets/vendor/rangeslider/rangeslider.js') }}"></script><!-- CUSTOM JS -->

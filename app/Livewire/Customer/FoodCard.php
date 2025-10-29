@@ -22,6 +22,7 @@ class FoodCard extends Component
     public $categories = [];
     public $sort = 'asc';
     public $selectedSize = null;
+    public $selectedCategory = '';
     public $foodPrices = [];
     public $page = null;
 
@@ -34,26 +35,50 @@ class FoodCard extends Component
 
     public function mount()
     {
-        // If coming from URL, explode categoriesQuery into categories array
         if ($this->categoriesQuery) {
-            $this->categories = $this->validateCategoryNames(
-                explode(',', strtolower($this->categoriesQuery))
-            );
+            $validNames = Category::pluck('name')->map(fn($n) => strtolower($n))->toArray();
+            $value = strtolower($this->categoriesQuery);
+
+            if (in_array($value, $validNames)) {
+                $this->selectedCategory = $value;
+            } else {
+                // Invalid value in query string — ignore it
+                $this->selectedCategory = '';
+                $this->categoriesQuery = '';
+            }
         }
 
         $foods = Food::with('prices')->get();
         foreach ($foods as $food) {
-            // Set the default selected size for each food item (first size by default)
             $this->selectedSize[$food->id] = $food->prices->first()->size_id ?? null;
         }
     }
 
-    public function updatedCategories()
+    public function toggleCategory($categoryName)
     {
-        $this->categories = $this->validateCategoryNames($this->categories);
-        $this->categoriesQuery = implode(',', $this->categories); // ← This updates the URL
+        if (strtolower($categoryName) === 'all') {
+            // Reset to show all categories
+            $this->selectedCategory = '';
+            $this->categoriesQuery = '';
+        } elseif ($this->selectedCategory === strtolower($categoryName)) {
+            // Clicking the same category again resets filter
+            $this->selectedCategory = '';
+            $this->categoriesQuery = '';
+        } else {
+            // Apply category filter
+            $this->selectedCategory = strtolower($categoryName);
+            $this->categoriesQuery = strtolower($categoryName);
+        }
+
         $this->resetPage();
     }
+
+    // public function updatedCategories()
+    // {
+    //     $this->categories = $this->validateCategoryNames($this->categories);
+    //     $this->categoriesQuery = implode(',', $this->categories); // ← This updates the URL
+    //     $this->resetPage();
+    // }
 
 
     public function updatedSort($value)
@@ -68,14 +93,14 @@ class FoodCard extends Component
         $this->resetPage();
     }
 
-    private function validateCategoryNames(array $values): array
-    {
-        $validCategories = Category::pluck('name')->map(fn($name) => strtolower($name))->toArray();
+    // private function validateCategoryNames(array $values): array
+    // {
+    //     $validCategories = Category::pluck('name')->map(fn($name) => strtolower($name))->toArray();
 
-        return array_values(array_filter($values, function ($val) use ($validCategories) {
-            return in_array(strtolower(trim($val)), $validCategories);
-        }));
-    }
+    //     return array_values(array_filter($values, function ($val) use ($validCategories) {
+    //         return in_array(strtolower(trim($val)), $validCategories);
+    //     }));
+    // }
 
     private function validateSort($value): string
     {
@@ -125,9 +150,9 @@ class FoodCard extends Component
                         ->orWhere('description', 'like', $term);
                 });
             })
-            ->when(count($this->categories), function ($q) {
+            ->when($this->selectedCategory, function ($q) {
                 $q->whereHas('category', function ($subQuery) {
-                    $subQuery->whereIn(DB::raw('LOWER(name)'), array_map('strtolower', $this->categories));
+                    $subQuery->where(DB::raw('LOWER(name)'), $this->selectedCategory);
                 });
             })
             ->join('food_prices', 'food.id', '=', 'food_prices.food_id')

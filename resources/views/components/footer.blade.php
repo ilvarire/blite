@@ -89,9 +89,5 @@
             </div>
         </div>
     </div>
-    <img src="assets/images/background/pic5.png" alt=""
-        class="bg1 bottom-[10px] left-0 absolute max-2xl:hidden animate-dz">
-    <img src="assets/images/background/pic6.png" alt=""
-        class="top-[15px] right-[10px] absolute max-2xl:hidden animate-dz">
 </section>
 <!-- Footer End -->

@@ -87,13 +87,13 @@ class Galleries extends Component
                 $width = $img->width();
                 $height = $img->height();
 
-                $expectedRatio = 4 / 3;
+                $expectedRatio = 5 / 3;
                 $actualRatio = $width / $height;
                 $tolerance = 0.02;
 
                 if (abs($actualRatio - $expectedRatio) > $tolerance) {
                     $pro = $key + 1;
-                    $this->addError("images", "Image must have a 4:3 aspect ratio. image-$pro");
+                    $this->addError("images", "Image must have a 5:3 aspect ratio. image-$pro");
                     return;
                 }
             };

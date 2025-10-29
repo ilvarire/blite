@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -56,7 +57,12 @@ class Equipments extends Component
     {
         $equipment = Equipment::findOrFail($this->equipmentId);
         $validated = $this->validate([
-            'name' => 'required|max:150|unique:equipment,name' . $this->equipmentId,
+            'name' => [
+                'required',
+                'regex:/^[a-zA-Z0-9\s]+$/', // Allowing only letters, numbers, and spaces
+                'max:100',
+                Rule::unique('equipment', 'name')->ignore($this->equipmentId),
+            ],
             'description' => 'required|string|min:5',
             'size' => 'required|max:150',
             'price' => 'required|numeric',
@@ -85,13 +91,13 @@ class Equipments extends Component
                 $width = $img->width();
                 $height = $img->height();
 
-                $expectedRatio = 3 / 4;
+                $expectedRatio = 5 / 3;
                 $actualRatio = $width / $height;
                 $tolerance = 0.02;
 
                 if (abs($actualRatio - $expectedRatio) > $tolerance) {
                     $pro = $key + 1;
-                    $this->addError("images", "Image must have a 3:4 aspect ratio. image-$pro");
+                    $this->addError("images", "Image must have a 5:3 aspect ratio. image-$pro");
                     return;
                 }
             };

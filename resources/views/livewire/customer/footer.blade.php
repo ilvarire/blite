@@ -94,7 +94,7 @@
                     <p class="text-sm text-[#999999]">Copyright {{ date('Y') }} All rights reserved.</p>
                 </div>
                 <div class="md:w-1/2 w-full md:text-right text-center px-[15px] md:mt-0 mt-[15px]">
-                    <span class="text-sm text-[#999999]">Designed by <a href="https://ilvariretechnologies.com/"
+                    <span class="text-sm text-[#999999]">Developed by <a href="https://ilvariretechnologies.com/"
                             target="_blank" class="text-primary">Ilvarire Technologies</a></span>
                 </div>
             </div>

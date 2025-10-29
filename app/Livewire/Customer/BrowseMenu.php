@@ -28,7 +28,7 @@ class BrowseMenu extends Component
     {
         $foods = Food::with('prices')
             ->whereHas('category', function ($query) {
-                $query->where('name', 'combo');
+                $query->where('slug', 'quick-meal');
             })
             ->take(6)
             ->get();

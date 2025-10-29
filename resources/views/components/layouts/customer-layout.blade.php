@@ -212,7 +212,7 @@
 
         <!-- Banner  -->
         <section
-            class="bg-[url('../images/banner/bnr2.jpg')] bg-fixed relative z-[1] after:content-[''] after:absolute after:z-[-1] after:bg-[#222222e6] after:opacity-100 after:w-full after:h-full after:top-0 after:left-0  pt-[50px] lg:h-[450px] sm:h-[400px] h-[300px] overflow-hidden bg-cover bg-center">
+            class="bg-[url('../images/banner/bnr2.jpg')] bg-fixed relative z-[1] after:content-[''] after:absolute after:z-[-1] after:opacity-100 after:w-full after:h-full after:top-0 after:left-0  pt-[50px] lg:h-[450px] sm:h-[400px] h-[300px] overflow-hidden bg-cover bg-center">
             <div class="container table h-full relative z-[1] text-center">
                 <div class="dz-bnr-inr-entry align-middle table-cell">
                     <h2 class="font-lobster text-white mb-5 2xl:text-[70px] md:text-[60px] text-[40px] leading-[1.2]">
@@ -244,6 +244,7 @@
     <div class="menu-backdrop"></div>
 
     <!--Start of Tawk.to Script-->
+    {{--
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
@@ -254,7 +255,7 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-    </script>
+    </script> --}}
     <!--End of Tawk.to Script-->
 
     <script src="{{ url('/assets/js/jquery.min.js')}}"></script> <!-- JQUERY.MIN JS -->

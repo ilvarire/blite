@@ -6,7 +6,7 @@
                 <div class="input-group relative flex flex-wrap items-stretch z-[1] w-full">
                     <input required="required" type="text" wire:model.live.debounce.500ms="search"
                         class="form-control bg-white py-[25px] sm:pr-[150px] pr-20 pl-[30px] border-none rounded-[10px] lg:h-[80px] h-[60px] w-full shadow-[0px_15px_55px_rgba(34,34,34,0.15)] text-[#666666] text-[15px] outline-none"
-                        placeholder="Type Here">
+                        placeholder="Search Food">
                     <div class="input-group-addon absolute top-[50%] right-[12px] translate-y-[-50%] z-[9]">
                         <button name="submit" value="submit" type="submit"
                             class="btn btn-primary btn-hover-2 lg:py-[15PX] xl:px-[30px] sm:py-[10px] py-[6px] px-3">
@@ -22,38 +22,11 @@
         <div class="lg:w-1/4 w-full px-[15px] lg:order-2 order-1">
             <aside class="lg:sticky pr-5 max-xl:pr-0 pb-[1px] top-[100px]">
                 <div class="shop-filter">
-                    <div class="widget dz-widget_services mb-[50px] dz-widget_services">
-                        <div class="widget-title xl:mb-[30px] mb-5 pb-3 text-lg relative">
-                            <h4 class="text-xl">Categories</h4>
-                        </div>
-                        @forelse($categoriesList as $category)
-                            <div class="form-check mb-[15px] block">
-                                <input
-                                    class="form-check-input w-5 h-5 rounded border border-[#2222224d] float-left appearance-none"
-                                    type="checkbox" value="{{ strtolower($category->name) }}" wire:model.live="categories"
-                                    id="category-{{ $category->id }}">
-                                <label class="form-check-label ml-[15px] text-[15px] inline-block text-bodycolor"
-                                    for="category-{{ $category->id }}">
-                                    {{$category->name}}
-                                </label>
-                            </div>
-                        @empty
-                        @endforelse
-                    </div>
                     <div class="widget dz-widget_services mb-[50px] dz-widget_services" wire:ignore>
                         <div class="widget-title xl:mb-[30px] mb-5 pb-3 text-lg relative">
                             <h4 class="text-xl">Sort</h4>
                         </div>
-                        <div class="form-check mb-[15px] block">
-                            <input
-                                class="form-check-input w-5 h-5 rounded border border-[#2222224d] float-left appearance-none"
-                                type="checkbox" value="{{ strtolower($sort) }}" wire:model.live="sort" id="low to high"
-                                {{ strtolower($sort) === 'asc' ? 'checked' : '' }}>
-                            <label class="form-check-label ml-[15px] text-[15px] inline-block text-bodycolor"
-                                for="low to high">
-                                Low to High
-                            </label>
-                        </div>
+
                         <div class="form-check mb-[15px] block">
                             <input
                                 class="form-check-input w-5 h-5 rounded border border-[#2222224d] float-left appearance-none"
@@ -71,15 +44,23 @@
         <div class="lg:w-3/4 w-full px-[15px] lg:order-2 order-1">
             <div class="row">
                 <div class="w-full px-[15px] text-center">
-                    <div class="site-filters style-2 clearfix lg:mb-12 md:mb-6 mb-5">
-                        <ul class="filters" data-bs-toggle="buttons">
-                            <li data-filter=".All" class="btn md:mb-0 mb-5 active"><a
-                                    href="javascript:void(0);"><span><i class="flaticon-fast-food"></i></span>All</a>
+                    <div class="site-filters style-1 overflow-y-auto clearfix lg:mb-12 md:mb-6 mb-5">
+                        <ul class="filters swiper-wrapper items-center" data-bs-toggle="buttons">
+                            <li class="btn md:mb-0 mb-5 {{ $selectedCategory === '' ? 'active' : '' }}"
+                                wire:click="toggleCategory('all')"><a href="javascript:void(0);">
+                                    <span>
+                                        <i class="flaticon-fast-food"></i>
+                                    </span>
+                                    ALL
+                                </a>
                             </li>
                             @forelse($categoriesList as $category)
-                                <li data-filter=".{{$category->slug}}" class="btn md:mb-0 mb-5">
+                                <li class="btn md:mb-0 mb-5 {{ strtolower($selectedCategory) === strtolower($category->name) ? 'active' : '' }}"
+                                    wire:click="toggleCategory('{{ $category->name }}')">
                                     <a href="javascript:void(0);">
-                                        <span><i class="flaticon-salad"></i></span>
+                                        <span>
+                                            <img src="{{ asset('storage/' . $category->image_url) }}" width="40" alt="">
+                                        </span>
                                         {{$category->name}}
                                     </a>
                                 </li>
@@ -89,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <ul id="masonry" class="row dlab-gallery-listing gallery">
+            <ul class="row dlab-gallery-listing gallery">
                 @forelse($foods as $food)
                     <li class="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-[30px] All {{$food->category->slug}}"
                         wire:key="{{$food->id}}">
@@ -99,9 +80,7 @@
                                 <img src="{{ asset('storage/' . $food->image_url) }}" alt="/" class="duration-300">
                                 <div class="dz-meta">
                                     <ul>
-                                        <li
-                                            class="absolute top-0 bg-[#FE9F10] left-0 text-white rounded-ee-[10px] uppercase py-[4px] px-2.5 font-semibold text-xs leading-[18px] z-[2]">
-                                            Top Seller</li>
+
                                         <li
                                             class="rating absolute bottom-[20px] right-[20px] bg-white text-[#222222] rounded-md text-sm font-medium py-1 px-[10px] mr-0">
                                             <i
