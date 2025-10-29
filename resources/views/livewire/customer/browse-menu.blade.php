@@ -26,7 +26,6 @@
                                     <h6 class="title mb-[3px] duration-500"><a
                                             href="{{ route('food.details', $food->slug)}}">{{ $food->name}}</a>
                                     </h6>
-                                    <p>{{ mb_strimwidth($food->description, 0, 30, '..') }}</p>
                                 </div>
                             </div>
                             <div class="menu-footer max-w-[110px] mt-auto">
