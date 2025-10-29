@@ -89,7 +89,7 @@ class AddFood extends Component
             'slug' => Str::slug($validated['name']),
             'description' => str($validated['description'])->trim()->lower()->ucfirst(),
             'category_id' => $validated['category_id'],
-            'image_url' => $this->image->store('foods', 'public')
+            'image_url' => $this->image->store('food', 'public')
         ]);
         $sizes = $this->getAllSizes();
 
