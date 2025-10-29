@@ -226,7 +226,7 @@ class Food extends Component
 
     public function getAllCategories()
     {
-        return Category::all();
+        return Category::orderBy('name', 'asc')->get();
     }
     public function getAllSizes()
     {
