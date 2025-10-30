@@ -19,7 +19,7 @@
                         <div
                             class="dz-img-box3 box-hover group style-4 bg-white p-[18px] flex flex-col h-[160px] relative z-[1] overflow-hidden rounded-[10px]">
                             <div class="menu-detail flex items-center">
-                                <div class="dz-media mr-5 w-[60px] min-w-[60px] h-[60px]">
+                                <div class="dz-media mr-5 w-[100px] min-w-[60px] h-[60px]">
                                     <img class="rounded-xl" src="{{ asset('storage/' . $food->image_url) }}" alt="/">
                                 </div>
                                 <div class="dz-content">
@@ -30,6 +30,7 @@
                                 </div>
                             </div>
                             <div class="menu-footer max-w-[110px] mt-auto">
+                                <span class="text-bodycolor text-[13px]">Regular Size</span>
                                 <span
                                     class="price duration-500">{{ Number::currency($food->prices->first()->price, 'GBP') }}</span>
                             </div>

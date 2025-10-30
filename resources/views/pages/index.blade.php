@@ -227,9 +227,10 @@
                                             </span>
                                             <h1 class="font-lobster mb-2.5 text-black2">Home of<br>Yummy <span
                                                     class="text-primary">Delight</span></h1>
-                                            <p class="max-w-[500px] lg:text-lg sm:text-base text-sm leading-[27px]">
+                                            <p
+                                                class="text-black2 italic max-w-[500px] lg:text-lg sm:text-base text-xs leading-[27px]">
                                                 Enjoy mouth-watering African dishes,<br>
-                                                delivered right to your door. Next day delivery (exceptions to quick
+                                                delivered right to your door.<br> Next day delivery (exceptions to quick
                                                 meals)
                                                 Order hours: 7am to 7pm.
                                             </p>

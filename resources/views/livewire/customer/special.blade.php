@@ -7,7 +7,7 @@
             @forelse($categories as $category)
                 <div class="lg:w-1/4 sm:w-1/2 w-full pl-[15px] pr-[15px] pb-[30px]" wire:key="category-{{ $category->id }}">
                     <div
-                        class="group rounded-lg menu-box box-hover text-center pt-10 px-5 pb-[30px] bg-white border border-grey-border hover:border-primary h-full flex duration-500 flex-col relative overflow-hidden z-[1] active">
+                        class="group rounded-lg menu-box box-hover text-center pt-10 px-5 pb-[30px] bg-[var(--secondary-dark)] border border-grey-border hover:border-primary h-full flex duration-500 flex-col relative overflow-hidden z-[1] active">
                         <div
                             class="w-[150px] min-w-[150px] h-[150px] mt-0 mx-auto mb-[10px] rounded-full border-[9px] border-white duration-500 z-[1]">
                             <img src="{{ asset('storage/' . $category->image_url) }}" alt=""
