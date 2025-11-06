@@ -111,7 +111,7 @@
                                              @elseif ($order->status === 'cancelled') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
                                                  @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
                                                     @endif
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ">{{ $order->status }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ">{{ $order->status }}
                                 </span>
 
                             </td>
@@ -230,13 +230,13 @@
                                         Status:
                                         <span
                                             class="
-                                                                                                                                                                                            @if ($selectedOrder->status === 'pending') px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                                                                                                                                                            @elseif ($selectedOrder->status === 'processing') px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600
-                                                                                                                                                                                            @elseif ($selectedOrder->status === 'completed') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
-                                                                                                                                                                                            @elseif ($selectedOrder->status === 'cancelled') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
-                                                                                                                                                                                            @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
-                                                                                                                                                                                            @endif
-                                                                                                                                                                                            ">
+                                                                                                                                                                                                        @if ($selectedOrder->status === 'pending') px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
+                                                                                                                                                                                                        @elseif ($selectedOrder->status === 'processing') px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600
+                                                                                                                                                                                                        @elseif ($selectedOrder->status === 'completed') px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100
+                                                                                                                                                                                                        @elseif ($selectedOrder->status === 'cancelled') px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700
+                                                                                                                                                                                                        @else px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700
+                                                                                                                                                                                                        @endif
+                                                                                                                                                                                                        ">
                                             {{ $selectedOrder->status }}
                                         </span>
                                     </p>
@@ -250,7 +250,7 @@
                                     <p>
                                         NOTE: {{ ' ' . ($selectedOrder->note ?? 'N/A') }}
                                     </p>
-
+                                    <br><br>
                                 </div>
                                 <span class="mb-2 text-xs self-center font-semibold text-gray-700 dark:text-gray-300">
                                     Cart Items ({{count($selectedOrder->items)}})
@@ -340,8 +340,8 @@
                             wire:loading.class="opacity-50 cursor-not-allowed"
                             wire:loading.remove.class="active:bg-purple-600 hover:bg-purple-700 focus:shadow-outline-purple"
                             class=" w-full px-5 py-3 ml-4 text-sm font-medium leading-5 text-white transition-colors
-                                                                                                                                    duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2
-                                                                                                                                    active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                                                                                                                            duration-150 bg-purple-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2
+                                                                                                                                            active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                             Complete Order
                         </button>
                     @endif
