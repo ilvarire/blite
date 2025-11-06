@@ -143,6 +143,11 @@
                             class="resize-none py-[10px] px-5 w-full text-[15px] rounded-[6px] placeholder:text-[#666666] focus:border-primary duration-500"
                             rows="5"
                             placeholder="Notes about your order, e.g. allergies, special instruction"></textarea>
+                        @error('note')
+                            <span class="text-xs text-danger">
+                                {{$message}}
+                            </span>
+                        @enderror
                     </div>
 
                 </div>
