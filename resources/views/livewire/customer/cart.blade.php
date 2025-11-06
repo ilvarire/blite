@@ -57,7 +57,7 @@
         </li>
         <li class="text-center flex">
             <a href="{{ route('cart')}}" class="btn btn-primary me-2 w-full btn-hover-1"><span>
-                    {{ count($cart_items) <= 6 ? 'View Cart' : 'Sell All'}}
+                    {{ count($cart_items) <= 6 ? 'View Cart' : 'See All'}}
                 </span></a>
             <a href="{{ route('food')}}" class="btn btn-outline w-full btn-hover-1"><span>Menu</span></a>
         </li>
