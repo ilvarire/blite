@@ -7,7 +7,7 @@
                         <div class="w-full justify-center text-center items-center flex flex-row">
                             <p>
                                 <strong class="text-zinc-600 dark:text-zinc-400">
-                                    Transfer $200 to Blitefood
+                                    Transfer {{ Number::currency($amount, 'GBP') }} to Blitefood
                                 </strong>
                             </p>
                         </div>
