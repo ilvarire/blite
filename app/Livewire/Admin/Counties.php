@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\County;
 use Flux\Flux;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
@@ -47,16 +48,31 @@ class Counties extends Component
             $this->editCode = $county->code;
             $this->countyId = $county->id;
         } else {
-            dd('nothing');
+            // dd('nothing');
         }
     }
 
     function updateCounty()
     {
+        // $this->validate([
+        //     'editName' => "required|regex:/^[a-zA-Z0-9\s\,&']+$/|min:2",
+        //     'editCode' => 'required|alpha|max:8',
+        //     'countyId' => 'required|exists:counties,id'
+        // ]);
+
         $this->validate([
-            'editName' => "required|regex:/^[a-zA-Z0-9\s\,&']+$/|min:2",
-            'editCode' => 'required|alpha|unique:counties|max:8',
-            'countyId' => 'required|exists:counties,id'
+            'editName' => [
+                'required',
+                'min:2',
+                Rule::unique('counties', 'name')->ignore($this->countyId), // Exclude the current county from the unique validation
+            ],
+            'editCode' => [
+                'required',
+                'alpha',
+                'max:8',
+                Rule::unique('counties', 'code')->ignore($this->countyId), // Exclude the current county from the unique validation
+            ],
+            'countyId' => 'required|exists:counties,id',
         ]);
 
         $county = county::findOrFail($this->countyId);

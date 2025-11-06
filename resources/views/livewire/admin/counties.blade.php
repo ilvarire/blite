@@ -202,7 +202,7 @@
                     </button>
                 </flux:modal.close>
 
-                <button wire:click="deletecounty"
+                <button wire:click="deleteCounty"
                     class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
                     delete
                 </button>
