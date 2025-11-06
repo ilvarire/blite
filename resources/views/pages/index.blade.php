@@ -239,7 +239,7 @@
                                                     class="font-lobster btn btn-primary btn-md btn-hover-1"><span>
                                                         View our Menu
                                                     </span></a>
-                                                <a href="{{ route('cart') }}}"
+                                                <a href="{{ route('cart') }}"
                                                     class="font-lobster btn btn-outline text-primary btn-md btn-hover-1"><span>
                                                         View Cart
                                                     </span></a>
