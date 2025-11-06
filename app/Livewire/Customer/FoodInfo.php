@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Customer;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Models\Food;
 use App\Models\FoodPrice;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
@@ -48,7 +48,7 @@ class FoodInfo extends Component
             $size_id = $selectedSize->size_id;
         }
 
-        $cart_count = CartManagement::addFoodItemToCart($food_id, $size_id, $quantity);
+        $cart_count = CartSession::addFoodItemToCart($food_id, $size_id, $quantity);
         $this->dispatch('update-cart-count', cart_count: $cart_count)->to(Cart::class);
         LivewireAlert::title('<h4 style="color: red; font-family: Lobster, cursive !important;">' . $food->name . '</h4>')
             ->text('Added to Cart.')

@@ -60,7 +60,7 @@ class FoodReviews extends Component
             'rating' => 'required|integer|min:1|max:5',
         ]);
 
-        $existingReview = FoodReview::where('user_id', auth()->id())
+        $existingReview = FoodReview::where('user_id', Auth::user()->id)
             ->where('food_id', $this->food->id)
             ->first();
 

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Customer;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Models\Food;
 use App\Models\General;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
@@ -20,13 +20,13 @@ class CartCard extends Component
     public function decreaseQuantity($product_type, $id)
     {
         if ($product_type === 'food') {
-            $this->cartItems = CartManagement::decrementFoodQuantity($id);
+            $this->cartItems = CartSession::decrementFoodQuantity($id);
         } else {
-            $this->cartItems = CartManagement::decrementEquipmentQuantity($id);
+            $this->cartItems = CartSession::decrementEquipmentQuantity($id);
         }
 
         $cart_count = count($this->cartItems);
-        // $this->grand_total = CartManagement::calculateGrandTotal($this->cart_items);
+        // $this->grand_total = CartSession::calculateGrandTotal($this->cart_items);
         $this->dispatch('update-cart-count', cart_count: $cart_count)->to(Cart::class);
         LivewireAlert::title('<h4 style="color: red; font-family: Lobster, cursive !important;">' . 'Quantity' . '</h4>')
             ->text('Updated successfully.')
@@ -39,13 +39,13 @@ class CartCard extends Component
     public function increaseQuantity($product_type, $id)
     {
         if ($product_type === 'food') {
-            $this->cartItems = CartManagement::incrementFoodQuantity($id);
+            $this->cartItems = CartSession::incrementFoodQuantity($id);
         } else {
-            $this->cartItems = CartManagement::incrementEquipmentQuantity($id);
+            $this->cartItems = CartSession::incrementEquipmentQuantity($id);
         }
 
         $cart_count = count($this->cartItems);
-        // $this->grand_total = CartManagement::calculateGrandTotal($this->cart_items);
+        // $this->grand_total = CartSession::calculateGrandTotal($this->cart_items);
         $this->dispatch('update-cart-count', cart_count: $cart_count)->to(Cart::class);
         LivewireAlert::title('<h4 style="color: red; font-family: Lobster, cursive !important;">' . 'Quantity' . '</h4>')
             ->text('Updated successfully.')
@@ -57,7 +57,7 @@ class CartCard extends Component
 
     public function removeFoodFromCart($food_id)
     {
-        $cart_items = CartManagement::removeFoodFromCart($food_id);
+        $cart_items = CartSession::removeFoodFromCart($food_id);
         $cart_count = count($cart_items);
         $this->dispatch('update-cart-count', cart_count: $cart_count);
         $this->dispatch('update-cart');
@@ -68,12 +68,12 @@ class CartCard extends Component
     {
         // dd($cart_count);
         // $this->cart_count = $cart_count;
-        $this->cartItems = CartManagement::getCartItemsFromCookie();
+        $this->cartItems = CartSession::getCartItemsFromSession();
     }
 
     public function removeEquipmentFromCart($equipment_id)
     {
-        $cart_items = CartManagement::removeEquipmentFromCart($equipment_id);
+        $cart_items = CartSession::removeEquipmentFromCart($equipment_id);
         $cart_count = count($cart_items);
         $this->dispatch('update-cart-count', cart_count: $cart_count);
         $this->dispatch('update-cart');

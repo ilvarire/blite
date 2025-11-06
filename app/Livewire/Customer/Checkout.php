@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Customer;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Mail\OrderPlaced;
 use App\Mail\PaymentPending;
 use App\Mail\PaymentPendingAdmin;
@@ -38,6 +38,8 @@ class Checkout extends Component
     public float $discount = 0;
     public $coupon, $cart_weight;
     public $paymentMethod = 'transfer';
+    public $coupon_id = null;
+    public $cart_total = null;
     public function mount()
     {
         $general = General::take(1)->first();
@@ -50,7 +52,7 @@ class Checkout extends Component
     }
     private function loadCartItems()
     {
-        $this->cartItems = CartManagement::getCartItemsFromCookie();
+        $this->cartItems = CartSession::getCartItemsFromSession();
         $this->counties = County::orderBy('name')->get();
         $this->grand_total = array_sum(array_column($this->cartItems, 'total_amount')) + array_sum(array_column($this->cartItems, 'caution_fee'));
         $this->cart_weight = array_sum(array_column($this->cartItems, 'weight'));
@@ -270,7 +272,7 @@ class Checkout extends Component
                     ]);
                 }
             }
-            CartManagement::clearCartItems();
+            CartSession::clearCartItems();
             $admin = User::where('role', 1)->value('email');
             if ($admin) {
                 Mail::to($admin)->send(

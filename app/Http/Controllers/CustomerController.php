@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Models\Equipment;
 use App\Models\Food;
 use App\Models\Gallery;
@@ -17,7 +17,7 @@ class CustomerController extends Controller
 
     public function cart()
     {
-        $cartItems = CartManagement::getCartItemsFromCookie();
+        $cartItems = CartSession::getCartItemsFromSession();
         $moreFoods = Food::with('prices', 'category')
             ->where('is_featured', true)->take(4)
             ->get();

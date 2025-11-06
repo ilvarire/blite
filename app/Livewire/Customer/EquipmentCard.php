@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Customer;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Models\Equipment;
 use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\Facades\LivewireAlert;
@@ -29,7 +29,7 @@ class EquipmentCard extends Component
 
             $rental_start = $this->setRentalStart($rental_start);
 
-            $cart_count = CartManagement::addEquipmentToCart($equipment->id, $rental_start, $duration, $quantity);
+            $cart_count = CartSession::addEquipmentToCart($equipment->id, $rental_start, $duration, $quantity);
             $this->dispatch('update-cart-count', cart_count: $cart_count)->to(Cart::class);
 
             LivewireAlert::title('<h4 style="color: red; font-family: Lobster, cursive !important;">' . $equipment->name . '</h4>')

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\CartManagement;
+use App\Helpers\CartSession;
 use App\Models\General;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -14,8 +14,8 @@ class AuthCustomerController extends Controller
 {
     public function checkout()
     {
-        if (auth()->check()) {
-            $cartItems = CartManagement::getCartItemsFromCookie();
+        if (Auth::check()) {
+            $cartItems = CartSession::getCartItemsFromSession();
             return view('pages.checkout-page', ['cartItems' => $cartItems]);
         } else {
             return redirect()->route('login');
@@ -48,7 +48,7 @@ class AuthCustomerController extends Controller
 
     public function orders()
     {
-        if (auth()->check()) {
+        if (Auth::check()) {
             return view('pages.orders-page');
         } else {
             return redirect()->route('login');
