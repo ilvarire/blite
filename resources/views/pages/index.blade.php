@@ -223,13 +223,13 @@
                                         <div class="banner-content md:mb-[60px] mb-0">
                                             <span
                                                 class="font-lobster font-medium md:text-xl text-base text-[var(--secondary-dark)] mb-[10px] block">
-                                                Authentic African Flavors
+                                                Authentic Nigerian Flavors
                                             </span>
                                             <h1 class="font-lobster mb-2.5 text-black2">Home of<br>Yummy <span
                                                     class="text-primary">Delight</span></h1>
                                             <p
                                                 class="text-black2 italic max-w-[500px] lg:text-lg sm:text-base text-xs leading-[27px]">
-                                                Enjoy mouth-watering African dishes,<br>
+                                                Enjoy mouth-watering Nigerian dishes,<br>
                                                 delivered right to your door.<br> Next day delivery (exceptions to quick
                                                 meals)
                                                 Order hours: 7am to 7pm.
@@ -378,7 +378,7 @@
                                     <div class="icon-content overflow-hidden text-center">
                                         <h5 class="mb-2">Food delivery</h5>
                                         <p class="sm:text-base text-[15px] group-hover:text-white">
-                                            Quick, reliable delivery of authentic African dishes, bringing the taste of
+                                            Quick, reliable delivery of authentic Nigerian dishes, bringing the taste of
                                             home right to your door.
                                         </p>
                                     </div>
@@ -394,7 +394,7 @@
                                     <div class="icon-content overflow-hidden text-center">
                                         <h5 class="mb-2">Catering Services</h5>
                                         <p class="sm:text-base text-[15px] group-hover:text-white">
-                                            Delicious, freshly prepared African meals for all types of events, designed
+                                            Delicious, freshly prepared Nigerian meals for all types of events, designed
                                             to impress your guests.
                                         </p>
                                     </div>
