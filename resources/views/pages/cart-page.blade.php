@@ -16,7 +16,7 @@
                     @forelse($moreFoods as $food)
                         <div
                             class="dz-shop-card style-1 flex border border-[#0000001a] rounded-[10px] mb-5 overflow-hidden duration-500 hover:border-transparent hover:shadow-[0px_15px_55px_rgba(34,34,34,0.15)] relative">
-                            <div class="dz-media w-[100px] min-w-[100px]">
+                            <div class="dz-media w-[100px] min-w-[100px] overflow-hidden">
                                 <img src="{{ asset('storage/' . $food->image_url) }}" alt="/" class="h-full">
                             </div>
                             <div class="dz-content sm:p-5 p-2 flex flex-col w-full">
@@ -43,10 +43,6 @@
                                                 class="text-primary font-medium">
                                                 {{ $food->category->name }}
                                             </span>
-                                        </li>
-                                        <li class="leading-[21px] mx-[10px] text-sm text-[#727272]"><i
-                                                class="flaticon-scooter mr-1 text-xl text-primary"></i>
-                                            fast delivery
                                         </li>
                                     </ul>
                                     <p class="mb-0">

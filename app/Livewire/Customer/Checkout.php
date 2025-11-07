@@ -218,7 +218,7 @@ class Checkout extends Component
             $this->calculateShipping();
         }
         $strg = $this->getRandomLetters();
-
+        $this->updateTotal();
         try {
             if ($this->orderType === 'delivery') {
                 $shippingAddress = ShippingAddress::create([
@@ -239,7 +239,7 @@ class Checkout extends Component
                 'user_id' => Auth::user()->id,
                 'order_type' => $this->orderType,
                 'shipping_address_id' => $AddressId,
-                'total_price' => $this->grand_total,
+                'total_price' => $this->cart_total,
                 'note' => $this->note ?? null,
                 'phone_number' => $this->phone_number,
                 'coupon_id' => $this->coupon_id ?? null
