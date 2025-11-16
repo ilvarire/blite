@@ -30,6 +30,7 @@ class Checkout extends Component
     public $zip_code;
     public $phone_number;
     public $note;
+    public $delivery_date;
     public $cartItems;
     public $counties;
     public $states = [];
@@ -184,6 +185,7 @@ class Checkout extends Component
             'county_id' => 'required_if:orderType,delivery|integer|exists:counties,id|nullable',
             'state_id' => 'required_if:orderType,delivery|max:30|exists:shipping_fees,id|nullable',
             'note' => 'nullable|max:600',
+            'delivery_date' => 'nullable|date|after:' . now()->addMinutes(1440)->toDateTimeString(),
             'orderType' => 'required|in:delivery,pickup',
             'paymentMethod' => 'required|in:transfer',
             'coupon' => 'nullable|string|max:50',
@@ -241,6 +243,7 @@ class Checkout extends Component
                 'shipping_address_id' => $AddressId,
                 'total_price' => $this->cart_total,
                 'note' => $this->note ?? null,
+                'delivered_at' => $this->delivery_date ?? null,
                 'phone_number' => $this->phone_number,
                 'coupon_id' => $this->coupon_id ?? null
             ]);

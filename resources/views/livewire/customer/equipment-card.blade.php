@@ -8,7 +8,7 @@
                         class="form-control bg-white py-[25px] sm:pr-[150px] pr-20 pl-[30px] border-none rounded-[10px] lg:h-[80px] h-[60px] w-full shadow-[0px_15px_55px_rgba(34,34,34,0.15)] text-[#666666] text-[15px] outline-none"
                         placeholder="Search Equipment">
                     <div class="input-group-addon absolute top-[50%] right-[12px] translate-y-[-50%] z-[9]">
-                        <button name="submit" value="submit" type="submit"
+                        <button name="submit" disabled value="submit" type="submit"
                             class="btn btn-primary btn-hover-2 lg:py-[15PX] xl:px-[30px] sm:py-[10px] py-[6px] px-3">
                             <span class="sm:block hidden">Search</span>
                             <i class="icon-search sm:hidden block text-xl"></i>

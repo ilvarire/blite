@@ -36,7 +36,7 @@ class FoodCard extends Component
     public function mount()
     {
         if ($this->categoriesQuery) {
-            $validNames = Category::pluck('name')->map(fn($n) => strtolower($n))->toArray();
+            $validNames = Category::pluck('slug')->map(fn($n) => strtolower($n))->toArray();
             $value = strtolower($this->categoriesQuery);
 
             if (in_array($value, $validNames)) {
@@ -72,13 +72,6 @@ class FoodCard extends Component
 
         $this->resetPage();
     }
-
-    // public function updatedCategories()
-    // {
-    //     $this->categories = $this->validateCategoryNames($this->categories);
-    //     $this->categoriesQuery = implode(',', $this->categories); // ← This updates the URL
-    //     $this->resetPage();
-    // }
 
 
     public function updatedSort($value)
@@ -143,7 +136,7 @@ class FoodCard extends Component
             })
             ->when($this->selectedCategory, function ($q) {
                 $q->whereHas('category', function ($subQuery) {
-                    $subQuery->where(DB::raw('LOWER(name)'), $this->selectedCategory);
+                    $subQuery->where(DB::raw('LOWER(slug)'), $this->selectedCategory);
                 });
             })
             ->join('food_prices', 'food.id', '=', 'food_prices.food_id')

@@ -5,10 +5,10 @@
                 <div class="widget mb-[50px]">
                     <h4 class="widget-title xl:mb-[30px] mb-5 pb-3 relative">Billing & Shipping Address</h4>
                     <div class="form-group mb-5 inline-block w-full">
-                        <div class="text-center w-full">
-                            <p for="orderType" class="text-primary mb-2 text-xl">
-                                <strong> Order Type</strong>
-                            </p>
+                        <div class="w-full">
+                            <label for="orderType" class="text-yellow mb-2 text-md">
+                                ORDER TYPE
+                            </label>
                         </div>
                         <select wire:model.live="orderType" id="orderType"
                             class="form-select mb-4 ignore py-3 px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
@@ -125,6 +125,25 @@
                                 class="btn bg-[#F3F3F3] gap-[10px] mb-4 shadow-none btn-gray hover:bg-primary hover:text-white">
                                 Apply Code
                             </button>
+                        </div>
+                    </div>
+                    <br>
+                    <h4 class="widget-title xl:mb-[30px] mb-5 pb-3 relative"></h4>
+                    <div class="row mt-5">
+                        <div class="w-full">
+                            <p for="orderType" class="text-yellow px-[15px] text-sm">
+                                DESIRED DELIVERY DATE
+                            </p>
+                        </div>
+                        <div class="form-group md:w-1/2 w-full px-[15px] mb-5">
+                            <input wire:model="delivery_date" type="datetime-local"
+                                min="{{ now()->addMinutes(1440)->format('Y-m-d\TH:i') }}"
+                                class="h-[50px] py-[10px] px-5 w-full text-[15px] rounded-[6px] placeholder:text-[#666666] focus:border-primary duration-500">
+                            @error('delivery_date')
+                                <span class="text-xs text-danger">
+                                    {{$message}}
+                                </span>
+                            @enderror
                         </div>
                     </div>
                 </div>
