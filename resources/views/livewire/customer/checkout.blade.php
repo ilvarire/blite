@@ -151,7 +151,7 @@
             </div>
             <div class="lg:w-1/2 w-full px-[15px]">
                 <button
-                    class="btn bg-[#F3F3F3] gap-[10px] mb-4 shadow-none duration-700 hover:text-white hover:bg-primary different-address"
+                    class="w-full btn bg-[#F3F3F3] gap-[10px] mb-4 shadow-none duration-700 hover:text-white hover:bg-primary different-address"
                     type="button">Add Order Note <i class="fa fa-angle-down text-xl"></i></button>
                 <div id="different-address" class="widget" style="display: none;">
                     <p class="text-base mb-4">
