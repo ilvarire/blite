@@ -36,7 +36,7 @@ class FoodCard extends Component
     public function mount()
     {
         if ($this->categoriesQuery) {
-            $validNames = Category::pluck('slug')->map(fn($n) => strtolower($n))->toArray();
+            $validNames = Category::pluck('name')->map(fn($n) => strtolower($n))->toArray();
             $value = strtolower($this->categoriesQuery);
 
             if (in_array($value, $validNames)) {

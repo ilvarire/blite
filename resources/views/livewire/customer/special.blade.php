@@ -16,12 +16,12 @@
                         </div>
                         <div class="mt-auto">
                             <h4 class="mb-2.5">
-                                <a href="{{ route('food', ['categories' => $category->slug])}}">
+                                <a href="{{ route('food', ['categories' => $category->name])}}">
                                     {{ $category->name}}
                                 </a>
                             </h4>
 
-                            <a href="{{ route('food', ['categories' => $category->slug])}}"
+                            <a href="{{ route('food', ['categories' => $category->name])}}"
                                 class="btn btn-primary btn-hover-2 mt-[18px]">See Menu</a>
                         </div>
                     </div>
