@@ -11,7 +11,7 @@
                             </label>
                         </div>
                         <select wire:model.live="orderType" id="orderType"
-                            class="form-select mb-4 ignore py-3 px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                            class="form-select mb-4 ignore py-[10px] px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
                             <option value="pickup">Pick Up</option>
                             <option value="delivery">Delivery</option>
                         </select>
@@ -35,7 +35,7 @@
                     @elseif($orderType === 'delivery')
                         <div class="form-group mt-5 mb-5 inline-block w-full">
                             <select wire:model.live="county_id"
-                                class="form-select ignore py-3 px-5 text-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                                class="form-select ignore py-[10px] px-5 text-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
                                 <option value="">Select County</option>
                                 @foreach ($counties as $county)
                                     <option value="{{ $county->id}}">{{ $county->name}}</option>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group mb-5 inline-block w-full">
                             <select wire:model.live="state_id"
-                                class="form-select ignore py-3 px-5 text-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                                class="form-select ignore py-[10px] px-5 text-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
                                 <option value="">Select City/Province</option>
                                 @if ($states)
                                     @foreach ($states as $state)
