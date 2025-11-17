@@ -11,7 +11,7 @@
                             </label>
                         </div>
                         <select wire:model.live="orderType" id="orderType"
-                            class="form-select mb-4 ignore py-[10px] px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                            class="form-select mb-4 ignore py-[10px] px-5 sm:py-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
                             <option value="pickup">Pick Up</option>
                             <option value="delivery">Delivery</option>
                         </select>
@@ -138,7 +138,7 @@
                         <div class="form-group md:w-1/2 w-full px-[15px] mb-5">
                             <input wire:model="delivery_date" type="datetime-local"
                                 min="{{ now()->addMinutes(1440)->format('Y-m-d\TH:i') }}"
-                                class="h-[50px] py-[10px] px-5 w-full text-[15px] rounded-[6px] placeholder:text-[#666666] focus:border-primary duration-500">
+                                class="h-[50px] py-[10px] px-5 w-full text-[15px] text-bodycolor rounded-[6px] placeholder:text-[#666666] focus:border-primary duration-500">
                             @error('delivery_date')
                                 <span class="text-xs text-danger">
                                     {{$message}}
