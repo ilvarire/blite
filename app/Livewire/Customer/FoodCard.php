@@ -136,7 +136,7 @@ class FoodCard extends Component
             })
             ->when($this->selectedCategory, function ($q) {
                 $q->whereHas('category', function ($subQuery) {
-                    $subQuery->where(DB::raw('LOWER(slug)'), $this->selectedCategory);
+                    $subQuery->where(DB::raw('LOWER(name)'), $this->selectedCategory);
                 });
             })
             ->join('food_prices', 'food.id', '=', 'food_prices.food_id')
