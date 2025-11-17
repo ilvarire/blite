@@ -253,7 +253,7 @@
                                         </p>
                                     </a> <br>
                                     <p>
-                                        DELIVERY DATE: {{ ' ' . ($delivered_at ?? 'N/A') }}
+                                        DELIVERY DATE: {{ ' ' . ($selectedOrder->delivered_at ?? 'N/A') }}
                                     </p>
                                     <p>
                                         NOTE: {{ ' ' . ($selectedOrder->note ?? 'N/A') }}
