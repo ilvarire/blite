@@ -272,7 +272,7 @@
 
                 <div class="form-group mb-5 inline-block w-full">
                     <select wire:model="paymentMethod"
-                        class="form-select mb-4 ignore py-3 px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                        class="form-select mb-4 ignore py-3 px-5 h-[50px] text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
                         <option value="transfer">Transfer</option>
                     </select>
                 </div>
