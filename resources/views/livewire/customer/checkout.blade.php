@@ -11,7 +11,7 @@
                             </label>
                         </div>
                         <select wire:model.live="orderType" id="orderType"
-                            class="form-select mb-4 ignore py-[10px] px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:h-2 after:w-2 after:right-5 after:top-[60%] w-full">
+                            class="form-select mb-4 ignore py-[10px] px-5 text-bodycolor bg-white border border-bodycolor rounded-md after:border-black2 after:w-2 after:right-5 after:top-[60%] w-full">
                             <option value="pickup">Pick Up</option>
                             <option value="delivery">Delivery</option>
                         </select>
